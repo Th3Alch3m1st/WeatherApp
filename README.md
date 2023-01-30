@@ -72,6 +72,7 @@ MVVM  with clean Architecture and moduler approch
 
 ## Limitation
 - When the App launches for the first time, if the device is in battery saver mode, app will not be able to get the current location even if GPS is enabled.
+- On Android Studio Emulator, You have to configure the emulator to provide a mock location. Even after configuring the emulator, in some cases the emulator does not provide location properly and the app may not retrieve location properly. For better experience please use a physical device.(On SDK-32 fused location api provide location as null, you can try out sdk 28 which work time to time)   
 - Above Android SDk - 28, Some UI test in CitySearchFragment may fail, due to searchview components 
     
 ## Build tools
