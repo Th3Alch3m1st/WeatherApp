@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_setting">Setting</string>
+    <string name="title_theme">Theme</string>
+    <string name="title_unit_of_measurement">Unit Of Measurement</string>
+</resources>

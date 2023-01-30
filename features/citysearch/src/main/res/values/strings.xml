@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cancel">Cancel</string>
+    <string name="search_here">Search here</string>
+    <string name="no_city_found">No City Found</string>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_setting"
+    app:startDestination="@id/fragment_setting">
+
+    <fragment
+        android:id="@+id/fragment_setting"
+        android:name="com.stocard.setting.presentation.SettingsFragment"
+        android:label="WeatherInfo"
+        tools:layout="@layout/fragment_setting">
+
+        <action
+            android:id="@+id/action_fragment_setting_to_dialog_unit_measurement"
+            app:destination="@id/dialog_unit_measurement" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/dialog_unit_measurement"
+        android:name="com.stocard.setting.presentation.dialog.UnitMeasurementDialog"
+        android:label="UnitMeasurementDialog"
+        tools:layout="@layout/bottom_seet_dialog_unit_meassurement_type">
+
+        <argument
+            android:name="list"
+            app:argType="string[]" />
+
+        <argument
+            android:name="type"
+            app:argType="string" />
+    </dialog>
+
+</navigation>

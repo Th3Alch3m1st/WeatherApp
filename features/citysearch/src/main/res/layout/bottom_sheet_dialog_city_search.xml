@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="dummy"
+            type="boolean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_top_corner_round">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/_87sdp"
+            android:layout_height="@dimen/_6sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:background="@drawable/bg_bar" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:layout_toStartOf="@id/btn_cancel"
+            android:background="@drawable/bg_search_view"
+            android:imeOptions="actionSearch|flagNoExtractUi|flagNoFullscreen"
+            app:defaultQueryHint="@string/search_here"
+            app:iconifiedByDefault="false" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/search_view"
+            android:layout_alignBottom="@id/search_view"
+            android:layout_alignParentEnd="true"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9ssp"
+            app:backgroundTint="@android:color/transparent"
+            app:elevation="0dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cities"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/search_view"
+            android:layout_marginTop="@dimen/_4sdp" />
+
+        <include
+            android:id="@+id/view_empty"
+            layout="@layout/layout_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/search_view"
+            android:visibility="gone"
+            app:dummy="@{true}" />
+    </RelativeLayout>
+
+</layout>
+

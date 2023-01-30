@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hourly_forecast">Hourly Forecast</string>
+    <string name="daily_forecast">Daily Forecast</string>
+    <string name="x_degree_celsius">%.01f&#xb0;C</string>
+    <string name="x_degree_Fahrenheit">%.01f&#xb0;F</string>
+    <string name="x_windspeed_metric">%.01f Meter/Sec</string>
+    <string name="x_windspeed_imperial">%.01f Miles/Hour</string>
+    <string name="simple_weather">Simple Weather</string>
+    <string name="x_humidity">%d\%%</string>
+    <string name="setting">Setting</string>
+    <string name="current_location">Current Location</string>
+    <string name="msg_enable_your_gps">Enable Your Gps to see current location weather info</string>
+    <string name="open_city_list">Open City List</string>
+    <string name="msg_permission">Location permission is needed to show your current location weather info</string>
+    <string name="msg_location_not_found">Location not found! Please check location permission is given and GPS is enabled!</string>
+    <string name="settings">Settings</string>
+</resources>

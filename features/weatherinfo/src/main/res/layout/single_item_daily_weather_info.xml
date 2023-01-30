@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="weatherInfo"
+            type="com.stocard.weatherinfo.domain.model.WeatherInfoDaily" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/center_horizontal_guide_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertical_guide_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".45" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_weather_icon"
+            image_url="@{weatherInfo.weather.icon}"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/bg_placeholder" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_date_time"
+            style="@style/TextStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:text="@{weatherInfo.dateTime}"
+            android:textAlignment="center"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toTopOf="@id/center_horizontal_guide_line"
+            app:layout_constraintEnd_toEndOf="@id/vertical_guide_line"
+            app:layout_constraintStart_toStartOf="@id/vertical_guide_line"
+            tools:text="Fri, Nov 1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_description"
+            style="@style/TextStyleNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:text="@{weatherInfo.weather.description}"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="@id/vertical_guide_line"
+            app:layout_constraintStart_toStartOf="@id/vertical_guide_line"
+            app:layout_constraintTop_toBottomOf="@id/center_horizontal_guide_line"
+            tools:text="Clear throughout the day" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_min_temperature"
+            style="@style/TextStyleNormal"
+            temperature="@{weatherInfo.temp.min}"
+            unit="@{weatherInfo.temp.type}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_9sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@id/center_horizontal_guide_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/center_horizontal_guide_line"
+            tools:text="10" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_max_temperature"
+            style="@style/TextStyleNormal"
+            temperature="@{weatherInfo.temp.max}"
+            unit="@{weatherInfo.temp.type}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_9sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@id/center_horizontal_guide_line"
+            app:layout_constraintEnd_toStartOf="@id/tv_min_temperature"
+            app:layout_constraintTop_toTopOf="@id/center_horizontal_guide_line"
+            tools:text="20" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0.7dp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

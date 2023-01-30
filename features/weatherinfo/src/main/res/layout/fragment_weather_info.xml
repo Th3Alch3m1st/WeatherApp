@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="currentWeatherInfo"
+            type="com.stocard.weatherinfo.domain.model.CurrentWeatherInfo" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/layout_toolbar"
+            layout="@layout/layout_toolbar"
+            app:toolbarTitle="@{@string/simple_weather}"/>
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_12sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_current_location"
+                        style="@style/TextStyleBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:drawableStart="@drawable/ic_location"
+                        android:drawablePadding="@dimen/_2sdp"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_13ssp"
+                        android:visibility="invisible"
+                        tools:visibility="visible" />
+
+                    <include
+                        android:id="@+id/layout_current_weather_info"
+                        layout="@layout/layout_current_weather_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_current_location"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:visibility="invisible"
+                        app:currentWeatherInfo="@{currentWeatherInfo}" />
+
+                    <include
+                        android:id="@+id/layout_hourly_forecast"
+                        layout="@layout/layout_weather_forecast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_current_weather_info"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:visibility="invisible"
+                        app:textTitle="@{@string/hourly_forecast}" />
+
+                    <include
+                        android:id="@+id/layout_daily_forecast"
+                        layout="@layout/layout_weather_forecast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_hourly_forecast"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_12sdp"
+                        android:visibility="invisible"
+                        app:textTitle="@{@string/daily_forecast}" />
+
+                    <include
+                        android:id="@+id/view_empty"
+                        layout="@layout/layout_error"
+                        android:visibility="gone"
+                        app:dummy="@{true}" />
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

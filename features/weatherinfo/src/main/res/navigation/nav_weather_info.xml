@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_weather_info"
+    app:startDestination="@id/fragment_weather_info">
+
+    <include app:graph="@navigation/nav_setting" />
+
+    <fragment
+        android:id="@+id/fragment_weather_info"
+        android:name="com.stocard.weatherinfo.presentation.WeatherInfoFragment"
+        android:label="WeatherInfo"
+        tools:layout="@layout/fragment_weather_info">
+
+        <action
+            android:id="@+id/action_fragment_weatherinfo_to_setting"
+            app:destination="@id/nav_setting"
+            app:enterAnim="@anim/right_slide_in"
+            app:exitAnim="@anim/left_slide_out"
+            app:popEnterAnim="@anim/left_slide_in"
+            app:popExitAnim="@anim/right_slide_out" />
+
+        <action
+            android:id="@+id/action_fragment_weather_info_to_city_search"
+            app:destination="@id/dialog_city_search" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/dialog_city_search"
+        android:name="com.stocard.citysearch.presentation.CitySearchBottomSheetDialog"
+        android:label="CitySearchDialog"
+        tools:layout="@layout/bottom_sheet_dialog_city_search">
+    </dialog>
+
+</navigation>
