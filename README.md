@@ -69,7 +69,10 @@ MVVM  with clean Architecture and moduler approch
 - Wrote Unit test and UI test to ensure app stability and performance
 - Wrote some infix function to increase unit test readability
 - Add documentation in UI test to explain test scenario and write short comment for unit test
-    
+
+## Limitation
+- When the App launches for the first time, if the device is in battery saver mode, app will not be able to get the current location even if GPS is enabled.
+- Above Android SDk - 28, Some UI test in CitySearchFragment may fail, due to searchview components 
     
 ## Build tools
 - Android Studio Electric Eel | 2022.1.1
