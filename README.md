@@ -42,13 +42,14 @@ Like most of the applications I also have trade off decisions in this applicatio
 MVVM  with clean Architecture and moduler approch
   
 ## Third-party libraries
-- Architecture Components: Lifecycle, ViewModel, Navigation, Safe Args
+- Architecture Components: ViewModel, Navigation, Safe Args
 - UI component: Material
 - Data Binding
 - Coroutine, Flow
 - Dependency injector: Hilt
 - Networking: Retrofit, Moshi
-- Glide: Image loading
+- Image loadin: Glide
+- Build configuration : Kotlin DSL
 - Unit testing: JUnit4, AssertJ, MockitoKotlin, Espresso Arch core testing (InstantTaskExecutorRule), Kotlinx coroutines test
 - UI testing: Espresso
 - Full list: https://github.com/Th3Alch3m1st/WeatherApp/blob/main/buildSrc/src/main/java/Dependencies.kt
